@@ -86,7 +86,7 @@ function Play(message){
 			N("Anyway...");
 			Play_2();
 		},
-		"You were asked you to be a doctor?": function(message){
+		"You were asked to be a doctor?": function(message){
 			$.main_menu_convo_1 = 3;
 
 			p(message);
