@@ -296,8 +296,8 @@ function Hiding_3(message){
 	j("Good luck. Text me in an hour.");
 
 	var insult = "";
-	if($.hippies) insult+=" new-age hippie";
-	if($.im_a_poet) insult+=" amateur poet";
+	if($.hippies) insult+=" considerate";
+	if($.im_a_poet) insult+=" nice friend";
 	n("See ya.");
 	if(insult!=""){
 		n("You"+insult+".");

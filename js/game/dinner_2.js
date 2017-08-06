@@ -150,14 +150,14 @@ function Buddy_Caught_Lying_1(message,callback){
 	Choose({
 		"Like I said, bring the happiness to others.": callback,
 		"Well, I can be a magician.": callback,
-		"What so you want me to do?": callback
+		"What do you want me to do?": callback
 	});
 }
 
 function Buddy_1_point_5(){
 
-	m("Just... don't hang around him too much.");
-	m("People might get the wrong idea.");
+	m("Just... don't enter the wrong college.");
+	m("People might look down on you.");
 
 	Choose({
 		"No, seriously.": function(message){
