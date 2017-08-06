@@ -90,26 +90,26 @@ function Start_Dinner_2_2(message){
 	m("We need to talk baout that.");
 
 	Choose({
-		"What do you want me to do?.": function(message){
+		"Just find different possibility, Mom. ": function(message){
 			$.relationship = "study";
 			Buddy_1(message);
 		},
-		"Mom, I want to be a magician.": function(message){
+		"Mom, I want to let everyone happy.": function(message){
 
 			$.relationship = "best friend";
 			n(message);
 
 			$.lying_about_hanging_out = true;
-			m("Oh, give up");
+			m("Yes you are, sweetie.");
 			n("Um. Well--");
-			m("So you're just hanging out, not take it seriously.");
-			n("I AM seriously!");
+			m("It doesn’t matter to your future.");
+			n("!");
 			m(". . .");
-			m("Alright, just don't obey to me.");
-			n("I'm not.");
+			m("Alright, what do you want?");
+			n("Bring the happiness..");
 			Buddy_1_point_5();
 		},
-		".": function(message){
+		"Like doctor?.": function(message){
 			$.relationship = "friend";
 			Buddy_1(message);
 		}
@@ -128,14 +128,14 @@ function Buddy_1(message){
 
 	if($.relationship!="study"){
 		$.lying_about_hanging_out = true;
-		m("Oh. So you're just hanging out, not studying.");
-		n("We ARE studying!");
+		m("OBeing a doctor is good option.");
+		n("Mom!");
 		m(". . .");
-		m("Alright, just don't lie to me.");
-		n("I'm not.");
+		m("Alright,  I can’t understand you.");
+		n("Probably.");
 	}else{
-		m("Okay. I'm just making sure.");
-		n("Of... what?");
+		m("Hey, I am your mom.");
+		n("Yes, you are.");
 	}
 
 	Buddy_1_point_5();
@@ -144,13 +144,13 @@ function Buddy_1(message){
 function Buddy_Caught_Lying_1(message,callback){
 	n(message);
 	m("Wait...");
-	m("I thought you said you 'just study together'.");
-	m("You didn't tell me you were friends.");
+	m("You don’t want to be a doctor, right..");
+	m("Don’t make fun of your future.");
 	$.lying_about_relationship = true;
 	Choose({
-		"Oops, I meant he's just a studymate.": callback,
-		"Well, he can also be my friend...": callback,
-		"No, I always said we were friends.": callback
+		"Like I said, bring the happiness to others.": callback,
+		"Well, I can be a magician.": callback,
+		"What so you want me to do?": callback
 	});
 }
 
@@ -160,7 +160,7 @@ function Buddy_1_point_5(){
 	m("People might get the wrong idea.");
 
 	Choose({
-		"Oh. No, yeah, we're just friends.": function(message){
+		"No, seriously.": function(message){
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,Buddy_2);
 			}else{
@@ -180,11 +180,11 @@ function Buddy_2(message){
 		m("Just don't lie to me.");
 		n("I won't.");
 		m(". . .");
-		m("But... about you hanging out with Jack.");
+		m("Magician can’t bring you happiness.");
 	}
-	m("It's just that some people might assume things, since...");
-	m("You know... he looks like...");
-	m("A gay?");
+	m("It's just that some people might assume things, ...");
+	m("You know... not everyone will...");
+	m("agree with you?");
 	Buddy_Choice();
 }
 
@@ -192,39 +192,39 @@ function Buddy_3(message){
 	n(message);
 	m("Just between mother and son, I think he might be... you know...");
 	n("No, what?");
-	m("A gay!");
-	m("He looks and talks like a gay.");
+	m("Not worry about your future!");
+	m("I DO, TOO.");
 	Buddy_Choice();
 }
 
 function Buddy_4(message){
 	n(message);
-	m("Oh, that's like a zen thing, right?");
-	n("Um.");
-	m("Zen is also about nature, and your classmate Jack, he...");
-	m("...you know, doesn't seem natural?");
+	m("You can’t be respectful, you know.)");
+	n("...");
+	m("Follow the social anticipation is the easy way.");
+	m("...just follow it.");
 	Choose({
-		"You think he's gay.": function(message){
+		"You only think about yourself.": function(message){
 			n(message);
-			m("Yes!");
-			m("You suspect it, too!");
+			m("No!");
+			m("I love you, son!");
 			Buddy_Choice();
 		},
-		"Don't say that about my friend!": function(message){
+		"Don't you have you own dream before!": function(message){
 
 			if($.relationship=="study" && !$.lying_about_relationship){
 				Buddy_Caught_Lying_1(message,function(message){
 
 					n(message);
-					m("Okay.");
-					m("Just don't lie to me.");
-					n("I won't.");
+					m("Sweetie.");
+					m("I won’t hurt you.");
+					n("You will.");
 					m(". . .");
 
-					m("But yes, even you agree that it's bad to be seen as 'not natural'.");
-					n("I never said--");
-					m("And I'm just looking out for you! Because he acts like, you know...");
-					m("A gay!");
+					m("Maybe the answer is yes, but is not bad for your life.");
+					n("I only want--");
+					m("You want me to listen to you, but it doesn’t meant let you to");
+					m("Be a magician!");
 					Buddy_Choice();
 
 				});
@@ -232,10 +232,10 @@ function Buddy_4(message){
 
 				n(message);
 				m("I'm just being honest.");
-				m("But yes, even you agree that it's bad to be seen as 'not natural'.");
+				m("But yes, you don’t know what’s the society");
 				n("I never said--");
-				m("And I'm just looking out for you! Because he acts like, you know...");
-				m("A gay!");
+				m("And you just want to be…");
+				m("A magician!");
 				Buddy_Choice();
 
 			}
