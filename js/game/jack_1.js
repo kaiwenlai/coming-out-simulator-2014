@@ -106,12 +106,12 @@ function Inception_Neither(message){
 	n(message);
 	j("What happens?");
 	n("I have to choose the college soon.");
-	n("But does the society allow me to do it?");
+	n("But does the society allow me to do what I want?");
 	n("I don’t know where to go.");
 	j("You can do it, trust me.");
 
 	Choose({
-		"I'm a poet, and I didn't even know it.": function(message){
+		"Should I trust you?": function(message){
 
 			$.im_a_poet = true;
 
@@ -225,8 +225,8 @@ function Hiding(){
 
 	Choose({
 		"I’m afraid they will be angry after telling everything.": Hiding_2,
-		"I don't know... I guess I haven't tried...": Hiding_2,
-		"I guess just try, right?": Hiding_2
+		"I don't know... I just...": Hiding_2,
+		"I guess: just say it, right?": Hiding_2
 	});
 
 }
@@ -239,9 +239,9 @@ function Hiding_2(message){
 		n("Again... WWW III remember?");
 	}
 
-	j("Interestingly.");
+	j("Yes, you're right.");
 	j("I am looking forward to...");
-	j("...because it is not easy for the whole world.");
+	j("...because it is not easy for you.");
 
 	n("Don’t make fun of me!");
 

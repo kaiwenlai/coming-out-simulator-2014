@@ -52,8 +52,8 @@ function Play(message){
 	// Asked both
 	if($.asked_about && $.asked_credits){
 		p(". . .");
-		p("Why did you make that a clickable option, when it was the only option left.");
-		N("NO IDEA");
+		p("I can't wait to start.");
+		N("Sure");
 	// Asked either
 	}else if($.asked_about || $.asked_credits){
 		N("Yes, let's!");
@@ -107,8 +107,8 @@ function Play_2(){
 		p("Really!");
 	}
 
-	N("My parents and my best friend discussed about my future at that time.");
-	N("As well as all the things we could have, should have, and never would have said.");
+	N("My parents and my best friend discussed about my future.");
+	N("They gave me different suggestion by their experience.");
 	N("It doesn't matter which is which.");
 	N("Not anymore.");
 
@@ -153,7 +153,7 @@ function Play_3(){
 	switch($.main_menu_convo_1){
 		case 1: whatISay = "The game isn’t about I enter the college I WNAT. "; break;
 		case 2: whatISay = "This game is based on my youth memory. "; break;
-		case 3: whatISay = "This game ends not in blood, but in tears. "; break;
+		case 3: whatISay = "This game ends in the way I don't want. "; break;
 	}
 	switch($.main_menu_convo_2){
 		case 1: whatISay += "Sorry for being a bit of upest."; break;
@@ -181,7 +181,7 @@ function Play_3(){
 	Wait(500);
 
 	N("When you play...");
-	N("Think about how to you chose your job.");
+	N("Think about what would you do, if you were me.");
 	N("Think about what do you really want when you’re still little.");
 	p("Yeah. Thank you. I will.");
 	N("Great.");
@@ -235,7 +235,7 @@ function Credits(message){
 		});
 	}else{
 		Choose({
-			"Speaking of that, can we play it now?": Play,
+			"Ok, can we play it now?": Play,
 			"Why'd you make this?": function(){
 				About("Why'd you make this?");
 			}
@@ -262,7 +262,7 @@ function About(message){
 	N("Right.");
 
 	if($.asked_credits){
-		p("By the way, why do you do that?");
+		p("So the reason may be...");
 		N("It could be your story or mine.");
 		p("Who knows?");
 	}
@@ -277,7 +277,7 @@ function About(message){
 
 	if($.asked_credits){
 		Choose({
-			"Let's just play this game already.": Play
+			"Let's just play this game.": Play
 		});
 	}else{
 		Choose({
