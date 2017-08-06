@@ -128,7 +128,7 @@ function Buddy_1(message){
 
 	if($.relationship!="study"){
 		$.lying_about_hanging_out = true;
-		m("OBeing a doctor is good option.");
+		m("Being a doctor is good option.");
 		n("Mom!");
 		m(". . .");
 		m("Alright,  I can’t understand you.");
@@ -145,7 +145,7 @@ function Buddy_Caught_Lying_1(message,callback){
 	n(message);
 	m("Wait...");
 	m("You don’t want to be a doctor, right..");
-	m("Don’t make fun of your future.");
+	m("Don’t make joke.");
 	$.lying_about_relationship = true;
 	Choose({
 		"Like I said, bring the happiness to others.": callback,
@@ -241,18 +241,18 @@ function Buddy_4(message){
 			}
 
 		},
-		"What do you mean, he's not natural?": Buddy_3
+		"What do you mean?": Buddy_3
 	});
 }
 
 function Buddy_Choice(){
 	if($.relationship=="friend"){
-		m("And since you say he's a 'good pal'...");
-		m("People might think you're a gay like him, too.");
+		m("And since you say you want to be a magician...");
+		m("People might think it's a nice job.");
 	}
 	if($.relationship=="best friend"){
-		m("And since you say he's your BEST friend...");
-		m("People might think you're a gay like him, too.");
+		m("And since you say you want to be a magician...");
+		m("People might look down on you, too.");
 	}
 	Choose({
 		"Ha, he sure acts gay. Luckily, he's not.": function(message){
@@ -272,7 +272,7 @@ function Buddy_Choice(){
 				Buddy_Caught_Lying_1(message,function(message){
 					n(message);
 					m("Okay.");
-					m("Just don't lie to me.");
+					m("Just don't hurt me.");
 					n("I won't.");
 					m(". . .");
 					Buddy_Aftermath();
@@ -290,9 +290,9 @@ function Buddy_Choice(){
 function Buddy_Aftermath(){
 
 	m("Don't get me wrong.");
-	m("I'm not saying those kind of people are bad!");
-	m("I just think... you should be careful around one of them.");
-	m("Jack might, you know, try to recruit you.");
+	m("I'm not saying magician is not good.!");
+	m("I just think... people won't think it's a proper job.");
+	m("Mom, you know, I don't mind.");
 
 	Show("clock_time","clock_1910");
 	Show("nicky","dinner_nicky_defiant");
@@ -310,10 +310,10 @@ function Buddy_Aftermath_2(message){
 
 	n("How do you even...");
 	n("Ugh, nevermind.");
-	m("Nick, I'm sorry you find me annoying.");
+	m("Son, I'm sorry you find me annoying.");
 	n("No, mom, stop doing th--");
-	m("Let's go back to talking about your grades.");
-	m("Now, what did you say you were studying tomorrow?");
+	m("Let's go back to eating.");
+	m("Please?");
 
 	Show("nicky","dinner_nicky_sit");
 	n(". . .");
