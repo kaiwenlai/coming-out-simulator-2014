@@ -7,7 +7,7 @@
 // OKAY, TOO CONVOLUTED, CUT OUT THE DIFFERENT FAMILIES & TYPO parts.
 
 function Start_Jack_1(){
-	
+
 	/////// SET UP SCENE ////////
 
 	Show("background","bedroom");
@@ -18,18 +18,18 @@ function Start_Jack_1(){
 
 	/////////////////////////////
 
-	j("And when he simply announces,");
-	j("'I bought the airline.'");
-	j("That was positively priceless!");
-	n("Is that what he said?");
-	n("I missed out what everyone in the theater was laughing about.");
-	j("You either need subtitles, or to clean your ears more often.");
-	j("So how did you interpret the ending?");
+	j("Hey, did you watch the STAR WALL AND CATS?");
+	j("It is the famous movie made by Dr. Howard.");
+	j("And guess who made the music?");
+	n("You mentioned it thousand time.");
+	n("It made by Larry Norhost.");
+	j("You’re my best friend, bro.");
+	j("Did you know the ending?");
 
 	Choose({
-		"It was totally all a dream.": Inception_Dream,
-		"He's got to be back in the real world!": Inception_Awake,
-		"Doesn't matter. Cobbs just finally let go.": Inception_Neither
+		"I have no mood to talk about that.": Inception_Dream,
+		"Cats become the host of the whole world!": Inception_Awake,
+		"Doesn't matter. My mom doesn’t let me watch.": Inception_Neither
 	});
 
 }
@@ -39,30 +39,30 @@ function Inception_Dream(message){
 	$.inception_answer = "dream";
 
 	n(message);
-	j("So his entire redemption story was a lie?");
-	n("A big fat lie.");
-	j("You're a bit of a downer, aren't you?");
+	j("Why do you say that?");
+	n("My parents.");
+	j("Wait, you didn’t tell them, right?");
 
 	Choose({
-		"Yup, I'm just a sad sack of sadness.": Sadsack,
-		"Sometimes... but not when I'm with you.": function(message){
+		"Hey, how can I tell them.": Sadsack,
+		"I told them what I want.": function(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("Ah Nicky, you amateur poet.");
-			n("Get me some french breads and wine,");
-			n("Coz that's got to be the cheesiest thing I've ever said.");
-			j("Apologize for nothing.");
-			n("Anywho...");
+			j("Did they support you?");
+			n("I’m kidding. I dare not to tell them,");
+			n("Coz they still want me to enter the Medical Schools.");
+			j("Sorry for that.");
+			n("It’s ok.");
 			Thanks();
 		},
-		"I'm just a realist.": function(message){
+		"There is no solution…": function(message){
 			$.hippies = true;
 
 			n(message);
-			j("You need more positive thinking in your life.");
-			n("And YOU need to stop being such a new-age hippie.");
-			n("Anywho...");
+			j("Oh, come on! Things will be better.");
+			n("I hope so...");
+			n("But I’m not you...");
 			Thanks();
 		}
 	});
@@ -74,26 +74,26 @@ function Inception_Awake(message){
 	$.im_a_poet = true;
 
 	n(message);
-	n("Otherwise, the whole movie would've all just been a lie.");
-	n("What's the point of living a lie?");
-	j("Ah Nicky, you amateur poet.");
-	j("I take it you liked the film?");
+	n("You know cats are sooo bossy.");
+	n("And cute.");
+	j("Ah Lee, you should watch this movie.");
+	j("Do you like Jerry or Tom.");
 
 	Choose({
-		"Aw yiss. Yes I did.": function(message){
+		"The winner goes to Jerry": function(message){
 			n(message);
 			Thanks();
 		},
-		"Mehhh, it was a tad confusing at times.": function(message){
+		"Meow~.": function(message){
 			n(message);
-			j("I believe that was the purpose.");
-			n("Mission accomplished, then.");
-			n("Anywho...");
+			j("I knew it.");
+			n("Love what you love.");
+			n("Anyway...");
 			Thanks();
 		},
-		"BWOOOOOOOOOOONG": function(message){
+		"Oh again.": function(message){
 			n(message);
-			j("I'll interpret that as a yes.");
+			j("I'll interpret that you love both.");
 			Thanks();
 		}
 	});
@@ -104,36 +104,35 @@ function Inception_Neither(message){
 	$.inception_answer = "neither";
 
 	n(message);
-	j("Oh?");
-	n("He didn't even bother looking to see if the top fell!");
-	n("Lies, truths, or half-truths... Cobbs no longer cares.");
-	n("He's finally happy, and that's all that matters.");
-	j("You either are being quite poetic, or quite depressing.");
+	j("What happens?");
+	n("I have to choose the college soon.");
+	n("But does the society allow me to do it?");
+	n("I don’t know where to go.");
+	j("You can do it, trust me.");
 
 	Choose({
 		"I'm a poet, and I didn't even know it.": function(message){
 
 			$.im_a_poet = true;
 
-			n("I'm a poet,");
-			n("and I wasn't even aware of the fact.");
-			j("You're a lyrical miracle, the evidence is empircal.");
-			n("That's hysterical.");
-			n("Anywho...");
+			n("I love magic,");
+			n("but it seems like not a ... ");
+			j("You are good at making fun of people.");
+			n("Really?");
+			n("If they were you...");
 			Thanks();
 
 		},
-		"Nah, I'm just a sad sack of sadness.": Sadsack,
-		"Or both.":function(message){
+		"Well, if you were right...": Sadsack,
+		"I will try.":function(message){
 
 			$.hippies = true;
 			$.im_a_poet = true;
 
 			n(message);
-			n("POETRY IS PAIN. ART IS SUFFERING.");
-			j("You sound like my mother.");
-			n("Your parents are <i>such</i> new-age hippies.");
-			n("Anywho...");
+			n("but never be successful.");
+			j("You are such an old man.");
+			n("Hey, we are at the same age.");
 			Thanks();
 
 		}
@@ -142,42 +141,42 @@ function Inception_Neither(message){
 }
 
 function Sadsack(message){
-	
+
 	$.sadsack = true;
 
 	n(message);
 	j("Aw, sorry to hear that.");
-	j("I hope our little date at the movies cheered you up?");
-	n("Sure did!");
+	j("I hope sharing the movie can make you happy.");
+	n("A little bit.");
 	Thanks();
 
 }
 
 function Thanks(){
-	
-	n("So yeah! Thanks for taking me out to watch Inception!");
-	j("My pleasure, Nicky.");
-	j("You should parody Inception in that odd web game of yours!");
-	n("Mmm, maybe maybe.");
-	n("Let's meet again tomorrow evening!");
 
-	j("Although...");
-	n("Hope I can convince the parents to let me out overnight.");
+	n("Thanks for sharing me <i>the STAR WALL AND CATS<i>.");
+	j("Cheer up, bro.");
+	j("I can read whatever you want.");
+	n("Hnn, oh ,ye~");
+	n("Let’s watch movie next time.");
 
-	j("I wish you didn't tell your mom and dad we were just studying, when we were actually at the cinema.");
-	n("I'll pretend we'll be cramming for the midterms all nigh-- huh?");
+	j("Sure.");
+	n("I hope my parents can allow me to do whatever I want.");
 
-	j("You can't keep hiding like this.");
-	n("Jack...");
+	j("I wish you can tell you parents about what do you want to be.");
+	n("Oh, I bet they want to kill me. LOL");
+
+	j("Be yourself.");
+	n("...");
 
 	Choose({
-		"They can never, ever know.": function(message){
+		"It will be the WWW III.": function(message){
 			$.coming_out_readiness="no";
 			n(message);
-			j("Really, never?");
+			j("Really?");
 			Hiding();
 		},
-		"I wish I could tell them, too.": function(message){
+		"I promise I will try my best..": function(message){
 			$.coming_out_readiness="yes";
 			n(message);
 			Hiding();
@@ -194,63 +193,63 @@ function Thanks(){
 
 function Hiding(){
 
-	j("Nicky, hiding like this is eating away at your soul.");
+	j("Lee, I will always support you.");
 
 	if($.inception_answer=="awake"){
-		j("Like you said, what's the point of living a lie?");
+		j("Be cat, try to be bossy?");
 	}
 	if($.inception_answer=="dream"){
-		j("It's... how'd you put it... 'a big fat lie'?");
+		j("Don’t be afraid of talking with your parents.");
 	}
 
 	if($.sadsack){
-		j("When you said just now you're a sadsack?");
-		j("I know you weren't joking. Not really.");
+		j("You’re afraid to tell them?");
+		j("But I know you can do it.");
 	}
 
-	n("Jack, come on.");
-	j("I came out to my parents last year.");
+	n("Where is your confidence?");
+	j("I told my parents that I want to study the language.");
 	if($.hippies){
-		n("That's NOT a fair comparison.");
-		n("LIKE I SAID, you and your parents are a bunch of new-age hippies.");
-		n("When I'm at your place, I can't tell if all the smoke is incense or marijuana.");
-		j("Hey! We only smoke weed every other day!");
+		n("We’re from different family.");
+		n("It’s unfair to compare us.");
+		n("I hope you can offer other example.");
+		j("Hey! Come on.");
 		n("Heh.");
-		j("The point is, my parents supported my coming out.");
+		j("You have to use the right way to persuade them.");
 	}else{
 		j("And they were very supportive!");
 	}
 
-	j("You're in Canada now. A lot of people here are LGBT friendly.");
-	j("How do you know your parents won't be supportive of you, too?");
+	j("Remember good communication makes good relationship.");
+	j("What are you worry about?");
 
 	Choose({
-		"Asian parents are usually very homophobic.": Hiding_2,
+		"I’m afraid they will be angry after telling everything.": Hiding_2,
 		"I don't know... I guess I haven't tried...": Hiding_2,
-		"They don't support anything but STUDYING.": Hiding_2
+		"I guess just try, right?": Hiding_2
 	});
 
 }
 
 function Hiding_2(message){
-	
+
 	n(message);
 
 	if($.coming_out_readiness=="no"){
-		n("Again... They can never, ever know.");
+		n("Again... WWW III remember?");
 	}
 
-	j("You have trust issues.");
-	j("You're even texting me instead of calling...");
-	j("...because you think your parents might listen in.");
+	j("Interestingly.");
+	j("I am looking forward to...");
+	j("...because it is not easy for the whole world.");
 
-	n("They would!");
+	n("Don’t make fun of me!");
 
-	j("This mode of communication.");
-	j("It's imprecise, impersonal, impossible to truly connect.");
+	j("Right, use this courage to talk to them.");
+	j("And tell them you don’t want to be a doctor.");
 
 	if($.im_a_poet){
-		n("Heh. You're an amateur poet like me, apparently.");
+		n("Hi. MAGACIAN.");
 	}else{
 		n("It's not too bad...");
 	}
@@ -259,9 +258,9 @@ function Hiding_2(message){
 		j("You yourself just said you wish you could tell them.");
 		j("Tell them.");
 	}else{
-		j("Nicky.");
+		j("Lee.");
 	}
-	j("Tell them about us. Tonight.");
+	j("Tell them about your choice.");
 
 	Choose({
 		"Tonight?! Heck no.": Hiding_3,
@@ -272,25 +271,25 @@ function Hiding_2(message){
 }
 
 function Hiding_3(message){
-	
+
 	n(message);
 	j(". . .");
-	n("I don't want to freak them out too much.");
-	n("Still need to convince them to let me stay at your place tomorrow night.");
-	n("I'll tell 'em I'm studying with you again.");
+	n("I don't want to make them angry.");
+	n("But I will try my best;");
+	n("though I’m afraid their reaction.");
 	j(". . .");
 	n("It's dinnertime. I'm heading downstairs now.");
 
-	j("Hey... I agree.");
-	n("Huh?");
-	j("With your thoughts on the movie ending, that is.");
+	j("Hey... I know that is not easy for you.");
+	n("Thanks.");
+	j("Don’t forget tell me their reaction.");
 	switch($.inception_answer){
-		case "dream": j("I think Cobbs was still dreaming, living a lie."); break;
-		case "awake": j("I think Cobbs reconnected with his real family, in the real world."); break;
-		case "neither": j("I think it doesn't matter, as long as Cobbs is happy."); break;
+		case "dream": j("And you have to watch the movie with me."); break;
+		case "awake": j("I think Cats are the best."); break;
+		case "neither": j("Be Cats, be bossy."); break;
 	}
-	n("Oh.");
-	j("Okay.");
+	n("OK.");
+	j("Okay~");
 	if($.coming_out_readiness=="maybe"){
 		j("Hope you changed your mind about being 'not ready to tell them yet'.");
 	}

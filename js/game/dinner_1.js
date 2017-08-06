@@ -27,7 +27,7 @@ function Start_Dinner_1(){
 }
 
 function Waiting_1(message){
-	
+
 	$.what_you_called_out = message;
 	n(message);
 
@@ -51,7 +51,7 @@ function Waiting_1(message){
 }
 
 function Waiting_2(message){
-	
+
 	n(message);
 	n(". . .");
 
@@ -72,17 +72,17 @@ function Waiting_2(message){
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
 			if($.im_a_poet){
-				m("Did you learn poetry from a friend?");
+				m("Don’t play!");
 			}else{
-				m("Poetic.");
+				m("No.");
 			}
 
 			Show("nicky","dinner_nicky_sit");
 			n("Oh, hey mom.");
-			
+
 			Waiting_End();
 		},
-		"Ugh, why did we get that thing?": function(message){
+		"I don’t like the colock!": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
@@ -93,11 +93,11 @@ function Waiting_2(message){
 
 			Show("nicky","dinner_nicky_sit");
 			n("Oh! Hey mom.");
-			
+
 			Waiting_End();
 		},
 		"Meow! Meow! Meow! Meow!": function(message){
-			
+
 			n("Meow.");
 			n("Meow!");
 

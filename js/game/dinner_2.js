@@ -19,7 +19,7 @@ function Start_Dinner_2(){
 			break;
 		case "play":
 			m("It's immature to play with your food, you know.");
-			n("Yeah, yeah.");
+			n("Oh.");
 			break;
 	}
 
@@ -30,7 +30,7 @@ function Start_Dinner_2(){
 			n(message);
 			n("*nom nom nom*");
 			m(". . .");
-			m("What's your plans for tomorrow?");
+			m("What’s your future plan?");
 			Start_Dinner_2_1();
 		},
 		"I have something to tell both of you.": function(message){
@@ -39,14 +39,14 @@ function Start_Dinner_2(){
 			n("Oh. Okay.");
 			m(". . .");
 			n("*nom nom nom*");
-			m("So, what's your plans for tomorrow?");
+			m("So, what's your future plan?");
 			Start_Dinner_2_1();
 		},
-		"There's something I need to tell just you first.": function(message){
+		"Mom I need to tell you first.": function(message){
 			n(message);
-			m("Hold on Nick, I haven't asked about your day yet!");
-			n("Today was fine.");
-			m("Okay. And what's your plans for tomorrow?");
+			m("Hold on son, I haven't see your college enrollment sheet!");
+			n("I chosed...");
+			m("Okay. Medical school?");
 			Start_Dinner_2_1();
 		}
 	});
@@ -55,21 +55,21 @@ function Start_Dinner_2(){
 
 function Start_Dinner_2_1(){
 
-	n("Oh. Uh... studying.")
-	n("Yeah. Tomorrow I'm studying.");
-	m("What subject?");
+	n("Oh. Doctor?")
+	n("Yeah. I’m not sure.");
+	m("Really?");
 	n("Er...");
 
 	Choose({
-		"Chemistry.": function(message){
+		"Mom, that’s not I want.": function(message){
 			$.studying_subject = "Chemistry";
 			Start_Dinner_2_2(message);
 		},
-		"Calculus.": function(message){
+		"I like to let people feel happy.": function(message){
 			$.studying_subject = "Calculus";
 			Start_Dinner_2_2(message);
 		},
-		"Compsci.": function(message){
+		"Maybe it’s not a good choice.": function(message){
 			$.studying_subject = "Computer Science";
 			Start_Dinner_2_2(message);
 		}
@@ -95,10 +95,10 @@ function Start_Dinner_2_2(message){
 			Buddy_1(message);
 		},
 		"Mom, Jack is... more than a friend.": function(message){
-			
+
 			$.relationship = "best friend";
 			n(message);
-			
+
 			$.lying_about_hanging_out = true;
 			m("Oh, like best friends?");
 			n("Um. Well--");
@@ -281,7 +281,7 @@ function Buddy_Choice(){
 				n(message);
 				Buddy_Aftermath();
 			}
-			
+
 		}
 	});
 }
@@ -305,7 +305,7 @@ function Buddy_Aftermath(){
 }
 
 function Buddy_Aftermath_2(message){
-	
+
 	n(message);
 
 	n("How do you even...");
