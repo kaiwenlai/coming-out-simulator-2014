@@ -156,7 +156,7 @@ function Thanks(){
 
 	n("Thanks for sharing me <i>the STAR WALL AND CATS<i>.");
 	j("Cheer up, bro.");
-	j("I can read whatever you want.");
+	j("I know you are tired.");
 	n("Hnn, oh ,ye~");
 	n("Let’s watch movie next time.");
 
@@ -282,7 +282,7 @@ function Hiding_3(message){
 
 	j("Hey... I know that is not easy for you.");
 	n("Thanks.");
-	j("Don’t forget tell me their reaction.");
+	j("Don’t forget to tell me their reaction.");
 	switch($.inception_answer){
 		case "dream": j("And you have to watch the movie with me."); break;
 		case "awake": j("I think Cats are the best."); break;

@@ -177,12 +177,12 @@ function Buddy_2(message){
 	n(message);
 	m("Okay.");
 	if($.lying_about_relationship){
-		m("Just don't lie to me.");
+		m("You know what I mean.");
 		n("I won't.");
 		m(". . .");
 		m("Magician can’t bring you happiness.");
 	}
-	m("It's just that some people might assume things, ...");
+	m("It won't give you any fortune, ...");
 	m("You know... not everyone will...");
 	m("agree with you?");
 	Buddy_Choice();
@@ -291,7 +291,7 @@ function Buddy_Aftermath(){
 
 	m("Don't get me wrong.");
 	m("I'm not saying magician is not good.!");
-	m("I just think... people won't think it's a proper job.");
+	m("I just think... people won't think it's not a proper job.");
 	m("Mom, you know, I don't mind.");
 
 	Show("clock_time","clock_1910");
@@ -352,15 +352,15 @@ function Grades_Start(message){
 }
 
 function Grades_Start_1(){
-	m("You first told me it was "+$.studying_subject+".");
-	m("Now you tell me it's "+$.studying_subject_2+"?");
+	m("You tole me you can enter the medical college,");
+	m("but now you CHANGE.");
 	$.lying_about_studying = true;
 	n("Mom, I was just confus--");
 	if($.lying_about_hanging_out || $.lying_about_relationship){
-		m("This is TWICE you've lied to me during this dinner.");
-		n("I didn't lie about--");
+		m("Enough");
+		n("I didn't want to make you angry--");
 	}
-	m("Either way, your grades in both subjects are terrible.");
+	m("Oh, I just you can be haapy in the future.");
 	n(". . .");
 	Grades_Explaining();
 }
@@ -370,11 +370,11 @@ function Grades_Start_2(){
 	n("I was eating.");
 	m("Okay.");
 	if($.lying_about_hanging_out){
-		m("I wonder if you're studying with Jack at all, or just always hanging out.");
-		n("We study.");
+		m("I wonder if you're taking your future seriously.");
+		n("I AM.");
 	}
 	m(". . .");
-	m("Still, your grades in your "+$.studying_subject_2+" class are terrible.");
+	m("Still, you can understand me...");
 	n(". . .");
 	Grades_Explaining();
 }
