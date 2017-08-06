@@ -61,7 +61,7 @@ function Play(message){
 
 	N("Let's travel back thirteen years ago, to 2004...");
 	p("WHAT!? Thirteen years ago!");
-	N("In 2004, I decided which college I should enter");
+	N("In 2004, I was facing which college I should enter.");
 
 	N("So, what do you think about the dilemma I faced at that time.");
 
