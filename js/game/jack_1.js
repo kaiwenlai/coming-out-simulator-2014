@@ -115,8 +115,8 @@ function Inception_Neither(message){
 
 			$.im_a_poet = true;
 
-			n("I love magic,");
-			n("but it seems like not a ... ");
+			n("Should I trust you,");
+			n("I want to be a megician. ");
 			j("You are good at making fun of people.");
 			n("Really?");
 			n("If they were you...");
@@ -163,7 +163,7 @@ function Thanks(){
 	j("Sure.");
 	n("I hope my parents can allow me to do whatever I want.");
 
-	j("I wish you can tell you parents about what do you want to be.");
+	j("I wish you can tell your parents about what do you want to be.");
 	n("Oh, I bet they want to kill me. LOL");
 
 	j("Be yourself.");
@@ -249,7 +249,7 @@ function Hiding_2(message){
 	j("And tell them you don’t want to be a doctor.");
 
 	if($.im_a_poet){
-		n("Hi. MAGACIAN.");
+		n("Yes.");
 	}else{
 		n("It's not too bad...");
 	}

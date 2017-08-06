@@ -56,7 +56,7 @@ function Play(message){
 		N("Sure");
 	// Asked either
 	}else if($.asked_about || $.asked_credits){
-		N("Yes, let's!");
+		N("Yes, let's do it!");
 	}
 
 	N("Let's travel back thirteen years ago, to 2004...");
@@ -158,7 +158,7 @@ function Play_3(){
 	switch($.main_menu_convo_2){
 		case 1: whatISay += "Sorry for being a bit of upest."; break;
 		case 2: whatISay += "And there are no right answers."; break;
-		case 3: whatISay += "And it's full of lies."; break;
+		case 3: whatISay += "And it's full of realisty."; break;
 	}
 	N(whatISay);
 

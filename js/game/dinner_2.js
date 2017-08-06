@@ -81,35 +81,35 @@ function Start_Dinner_2_2(message){
 
 	n(message);
 	m("Good.");
-	m("You really, really could improve your grades in your "+$.studying_subject+" class.");
+	m("You really, really don't think about your future.");
 	n(". . .");
-	m("So, I'll be at the library tomorrow.");
-	m("Will I see you studying there?");
-	n("Actually, I'm gonna study at Jack's place.");
-	m("Again?");
-	m("You spend a lot of time with him.");
+	m("So, l tell you again.");
+	m("Entering the Medical shcool is the best choice.");
+	n("Actually, that is not what I love.");
+	m("Seriously?");
+	m("We need to talk baout that.");
 
 	Choose({
-		"We just study together, that's all.": function(message){
+		"What do you want me to do?.": function(message){
 			$.relationship = "study";
 			Buddy_1(message);
 		},
-		"Mom, Jack is... more than a friend.": function(message){
+		"Mom, I want to be a magician.": function(message){
 
 			$.relationship = "best friend";
 			n(message);
 
 			$.lying_about_hanging_out = true;
-			m("Oh, like best friends?");
+			m("Oh, give up");
 			n("Um. Well--");
-			m("So you're just hanging out, not studying.");
-			n("We ARE studying!");
+			m("So you're just hanging out, not take it seriously.");
+			n("I AM seriously!");
 			m(". . .");
-			m("Alright, just don't lie to me.");
+			m("Alright, just don't obey to me.");
 			n("I'm not.");
 			Buddy_1_point_5();
 		},
-		"Well yeah, that's what good pals do.": function(message){
+		".": function(message){
 			$.relationship = "friend";
 			Buddy_1(message);
 		}
