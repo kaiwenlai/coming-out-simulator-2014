@@ -61,7 +61,7 @@ function Play(message){
 
 	N("Let's travel back thirteen years ago, to 2004...");
 	p("WHAT!? Thirteen years ago!");
-	N("In 2004, I was facing which college I should enter.");
+	N("In 2004, I was facing the dilemma of chosing the college.");
 
 	N("So, what do you think about the dilemma I faced at that time.");
 
@@ -91,7 +91,7 @@ function Play(message){
 
 			p(message);
 			N("OH, young people have to follow the social rule.");
-			N("I CAN’T NOT LET MY PARENTS DOWN.");
+			N("I CAN’T LET MY PARENTS DOWN.");
 			p("So?");
 			N("Anyway...");
 			Play_2();
@@ -186,7 +186,6 @@ function Play_3(){
 	p("Yeah. Thank you. I will.");
 	N("Great.");
 
-	N(". . .");
 	N("Enjoy it.");
 
 	Clear();
@@ -205,7 +204,7 @@ function Credits(message){
 	}
 
 	N("Oh Let me introduce myself.");
-	N("Hi, I'm Dr. Lee and I gave up my life to the society.");
+	N("Hi, I'm Dr. Lee, the main character in the game.");
 	N("I follow my parents’ anticipation to be a doctor.");
 
 	p("Hi Dr. Lee, what could I help you?");
@@ -237,7 +236,7 @@ function Credits(message){
 	}else{
 		Choose({
 			"Speaking of that, can we play it now?": Play,
-			"Why'd you make this? (About This Game)": function(){
+			"Why'd you make this?": function(){
 				About("Why'd you make this?");
 			}
 		});
