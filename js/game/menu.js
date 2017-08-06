@@ -66,7 +66,7 @@ function Play(message){
 	N("So, what do you think about the dilemma I faced at that time.");
 
 	Choose({
-		"Enter the college you want?": function(message){
+		"Can't enter the college you want?": function(message){
 			$.main_menu_convo_1 = 1;
 
 			p(message);
