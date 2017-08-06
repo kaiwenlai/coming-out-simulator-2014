@@ -10,9 +10,9 @@ function Start_Dinner_3(){
 	n("Mom.");
 
 	Choose({
-		"That's why I'm studying more with Jack.": Tutor,
+		"I'm not interestied in studying.": Tutor,
 		"Look, I'm trying. I really am.": Tutor,
-		"My grades are fine.": Tutor
+		"My future is fine.": Tutor
 	});
 
 }
@@ -20,42 +20,42 @@ function Start_Dinner_3(){
 function Tutor(message){
 
 	n(message);
-	m("I'm worried for you. Jack's not a good influence.");
+	m("I'm worried for you. This is a cruciel world.");
 
 	if($.hippies){
-		m("I think his parents might even be drug addicts...");
+		m("I think your advisor never thold you in the school..");
 		n("What makes you say th--");
 	}else if($.im_a_poet){
-		m("All he does is do poetry.");
+		m("You can't see the reality.");
 		n("What makes you say th--");
 	}
-	
-	m("I'm getting you a home tutor.");
+
+	m("Stop talking that, eat!");
 	n("...what?");
 
 	if($.studying_subject!=$.studying_subject_2){
-		m("She'll be tutoring you in "+$.studying_subject+" and "+$.studying_subject_2+".");
+		m("We can talk about your "+$.friends+" and "+$.school+".");
 	}else{
-		m("She'll be tutoring you in "+$.studying_subject+".");
+		m("We can talk about "+$.your friend+".");
 	}
 
-	m("Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
+	m("How's your best friend, L.");
 
 	Choose({
-		"Are you trying to stop me from seeing Jack?": Tutor_Seeing,
-		"Are you trying to matchmake me with her?": Tutor_Matchmake,
-		"Can we talk about tutors another time?": Tutor_Forget
+		"Oh, he wants to study the LANGUAGE.": Tutor_Seeing,
+		"He's good, not like me.": Tutor_Matchmake,
+		"Can we talk about Him next time?": Tutor_Forget
 	});
 
 }
 
 function Tutor_Seeing(message){
 	n(message);
-	m("I'm sorry, <i>seeing</i> Jack?");
-	m("Be careful how you say that. You make it sound like...");
-	
+	m("I'm sorry, what did you say.");
+	m("Does their parents mind it?");
+
 	Choose({
-		"Like we're dating? Yeah. We are.": function(message){
+		"His parents never mind it.": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
@@ -65,28 +65,28 @@ function Tutor_Seeing(message){
 			m(". . .");
 			Threat_School();
 		},
-		"I just meant meeting Jack.": function(message){
+		"Not kidding.": function(message){
 			n(message);
-			m("Okay. Just being clear about some things.");
-			n("Yeah.");
+			m("Okay. Don't mind his business.");
+			n("You ask me!");
 			m(". . .");
-			m("Claire's really cute.");
-			n("Sure.");
-			m("She has perky breasts.");
+			m("Do you have a girlfriend in school?");
+			n("Mom.");
+			m("Just ask.");
 			Threat_Tutor();
 		},
-		"We're. Not. Boyfriends.": function(message){
+		"They definiely moind it.": function(message){
 			n(message);
 			m(". . .");
 			m("Okay.");
-			m("I never said you were, but... okay.");
-			n("We're friends.");
+			m("Yes , they are.");
+			n("But they won't stop.");
 
 			if($.relationship=="friend"){
-				m("\"Good pals\"...");
+				m("\"Oh no\"...");
 			}
 			if($.relationship=="best friend"){
-				m("\"BEST friends\"...");
+				m("\"Son\"...");
 			}
 
 			Threat_Tutor();
@@ -97,21 +97,21 @@ function Tutor_Seeing(message){
 
 function Tutor_Matchmake(message){
 	n(message);
-	m("Well, if that's what you want, I could!");
-	n("nooooo.");
-	m("Don't be shy! You're growing up to be a man.");
-	m("And you're going to give me lots of grandkids.");
+	m("Well, you can go out with him!");
+	n("Tomorrow?");
+	m("Yes, you sould take a small break.");
+	m("Watc movie or something.");
 
 	Choose({
-		"Stop it! I haven't even met Claire yet!": function(message){
+		"But I don't have mood!": function(message){
 			n(message);
-			m("Yet!");
-			m("She's coming over tomorrow!");
-			n("What? But I promised Jack--");
-			m("I ironed your best clothes. You'll make a good first impression.");
+			m("Seriously!");
+			m("You evan can't make a good decision in daily life.");
+			n("What? --");
+			m("Just walk around tomorrow.");
 			Threat_Tutor();
 		},
-		"The odds of that are 50-50, coz I'm bi.": function(message){
+		"We discussed the newest movie before.": function(message){
 
 			$.admit_bisexuality = true;
 
@@ -120,18 +120,18 @@ function Tutor_Matchmake(message){
 
 			Show("nicky","dinner_nicky_defiant");
 
-			n("Yes. As in BISEXUAL.");
-			n("As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
+			n("Alright.");
+			n("I try.");
 			m(". . .");
 			n(". . .");
 			Threat_School();
 		},
-		"No. I don't ever want to have kids.": function(message){
+		"You just avoid the truth.": function(message){
 			n(message);
 			m("You'll change your mind when you grow up.");
-			m("Raising a child is wonderful. Your children will look up to you!");
-			n("...of course, you narcissist.");
-			m("Excuse me?");
+			m("Raising a child takes a lot of effort.");
+			n("...of course....");
+			m("sweetie?");
 			n("Nothing.");
 			m(". . .");
 			Threat_Tutor();
@@ -141,80 +141,80 @@ function Tutor_Matchmake(message){
 
 function Tutor_Forget(message){
 	n(message);
-	m("No, because I've already scheduled Claire to come over tomorrow.");
-	n("What?!");
-	n("No. I promised to study with Jack tomorrow.");
+	m("I can buy the ticket for you.");
+	n("Seriously?!");
+	n("No. I till don't want.");
 	m(". . .");
-	m("How long did you want to stay over at his place?");
+	m("How long did you want to against my decision?");
 
 	Choose({
-		"Overnight.": function(message){
+		"I grow up, mom.": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
 			n("...Hello?");
-			n("It's not weird. Friends have sleepovers all the time.");
+			n("It's not weird.");
 			m(". . .");
 			Threat_School();
 		},
-		"Just the afternoon.": function(message){
+		"I promise.": function(message){
 			n(message);
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
+				m("I knew it. You thouth you're an adult.");
 				n("Huh?");
 			}else{
 				m("...I knew it.");
 			}
-			m("You're just hanging out with him.");
+			m("But it's too early.");
 			Threat_Tutor();
 		},
-		"Maybe an hour or so.": function(message){
+		"LALALALA.": function(message){
 			n(message);
-			m("That's not enough to really get studying done.");
+			m("Hey, be seriously.");
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
+				m("We're not enemy.");
 				n("Huh?");
 			}
-			m("You're just hanging out with him.");
+			m("i want you to be the best man in the world.");
 			Threat_Tutor();
 		}
 	});
 }
 
 function Threat_Tutor(){
-	
+
 	Show("nicky","dinner_nicky_defiant");
-	
+
 	n(". . .");
-	m("Claire will be tutoring you every day after school, starting tomorrow.");
+	m("Or we can go out tomorrow.");
 
 	Choose({
-		"Every day?! What about my friends?!":function(message){
+		"With you!":function(message){
 			n(message);
 			m("Sweetie, I'm your friend!");
 			n(". . .");
-			m("Also Claire can be your friend. Maybe more than friends.");
+			m("Also nothing wrnng to go out with mom.");
 			n(". . .");
 			n("Are we done?");
-			m("Just... one more thing.");
+			m("...");
 			Plot_Twist();
 		},
-		"Okay, but my weekends are free, right?": function(message){
+		"I am busy tomorrow.": function(message){
 			n(message);
-			m("Yes.");
-			n("Okay. Good that this is all settled now.");
-			m("...Yes.");
+			m("Yes?");
+			n("Yes.");
+			m("...ok.");
 			n(". . .");
-			m("Just... one more thing.");
+			m("I won't force you.");
 			Plot_Twist();
 		},
-		"What if just DON'T study with Claire?": function(message){
+		"Maybe?": function(message){
 			n(message);
-			m("Well, if you also want to hang out with her, that's good too.");
-			m("Anything to make you more manly.");
+			m("Well, if don't mind.");
+			m("Anything to let our relation better.");
 			n("ugh.");
 			m("Oh.");
-			m("One more thing.");
+			m("I won't force you.");
 			Plot_Twist();
 		}
 	});
@@ -224,23 +224,23 @@ function Threat_Tutor(){
 function Threat_School(){
 
 	$.changing_schools = true;
-	
-	m("You're changing schools.");
+
+	m("Yes, but not enough.");
 
 	Show("nicky","dinner_nicky_outrage");
 
 	n("WHAT?!");
-	m("I think it's not just Jack, it's the entire school that's a bad influence on you.");
+	m("I think you still have a lot of things to learn.");
 	n("ARE YOU SERIOUS.");
-	m("The whole Canadian culture is making you confused about who you are.");
+	m("How about see Your uncle?");
 
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"No, it's YOUR Asian culture that's backwards!": function(message){
+		"No, I know he is a doctor!": function(message){
 			n(message);
 			m("Don't be so rude!");
-			m("It's YOUR culture, too!");
+			m("It's YOUR uncle!");
 			n(". . .");
 			Plot_Twist();
 		},
@@ -251,10 +251,10 @@ function Threat_School(){
 			n(". . .");
 			Plot_Twist();
 		},
-		"Whatever, ALL schools have queer people.": function(message){
+		"Whatever, it's hard to talk to you.": function(message){
 			n(message);
 			m("Don't be so rude!");
-			m("And watch it, I could change my mind and start homeschooling you.");
+			m("And watch it, he is a doctor.");
 			n(". . .");
 			Plot_Twist();
 		}
@@ -264,8 +264,8 @@ function Threat_School(){
 
 function Plot_Twist(){
 
-	m("Yesterday, when you were supposedly studying with Jack?");
-	m("I know you secretly went off to watch a movie.");
+	m("You still don't want to talk to me?");
+	m("I tried, Mom.");
 
 	Show("nicky","dinner_nicky_sit");
 	n(". . .");
